@@ -75,3 +75,215 @@ if (isset($_POST['save'])) {
     exit;
 }
 ?>
+<!DOCTYPE html>
+<html lang="sq">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Shto Produkt</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+
+<div class="card shadow">
+
+<div class="card-header bg-success text-white">
+
+<h3>Shto Produkt</h3>
+
+</div>
+
+<div class="card-body">
+
+<form method="POST" enctype="multipart/form-data">
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+
+<label>Emri</label>
+
+<input
+type="text"
+name="name"
+class="form-control"
+required>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Marka</label>
+
+<input
+type="text"
+name="brand"
+class="form-control">
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Kategoria</label>
+
+<select
+name="category"
+class="form-select">
+
+<?php foreach($categories as $cat){ ?>
+
+<option value="<?= $cat['id']; ?>">
+
+<?= $cat['name']; ?>
+
+</option>
+
+<?php } ?>
+
+</select>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>SKU</label>
+
+<input
+type="text"
+name="sku"
+class="form-control">
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Çmimi</label>
+
+<input
+type="number"
+step="0.01"
+name="price"
+class="form-control">
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Çmimi në Ofertë</label>
+
+<input
+type="number"
+step="0.01"
+name="sale_price"
+class="form-control">
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Stoku</label>
+
+<input
+type="number"
+name="stock"
+class="form-control">
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Foto</label>
+
+<input
+type="file"
+name="image"
+class="form-control">
+
+</div>
+
+<div class="mb-3">
+
+<label>Përshkrim i shkurtër</label>
+
+<textarea
+name="short_description"
+class="form-control"></textarea>
+
+</div>
+
+<div class="mb-3">
+
+<label>Përshkrim i plotë</label>
+
+<textarea
+name="description"
+rows="6"
+class="form-control"></textarea>
+
+</div>
+
+<div class="form-check">
+
+<input
+type="checkbox"
+name="featured"
+class="form-check-input">
+
+<label class="form-check-label">
+
+Featured Product
+
+</label>
+
+</div>
+
+<div class="form-check mb-4">
+
+<input
+type="checkbox"
+checked
+name="status"
+class="form-check-input">
+
+<label class="form-check-label">
+
+Aktiv
+
+</label>
+
+</div>
+
+<button
+name="save"
+class="btn btn-success">
+
+Ruaj Produktin
+
+</button>
+
+<a
+href="products.php"
+class="btn btn-secondary">
+
+Anulo
+
+</a>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
