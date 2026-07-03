@@ -76,3 +76,44 @@
         <div class="row g-4">
 
             <div class="col-lg-3
+<section class="py-5">
+
+<div class="container">
+
+<div class="row text-center">
+
+<div class="col-md-4">
+
+<h2>🚚</h2>
+
+<h4>Dërgesë e Shpejtë</h4>
+
+<p>Në të gjithë Shqipërinë.</p>
+
+</div>
+
+<div class="col-md-4">
+
+<h2>🌿</h2>
+
+<h4>Produkte Origjinale</h4>
+
+<p>Vetëm marka të certifikuara.</p>
+
+</div>
+
+<div class="col-md-4">
+
+<h2>💚</h2>
+
+<h4>Mbështetje</h4>
+
+<p>Jemi gjithmonë pranë klientëve tanë.</p>
+
+</div>
+
+</div>
+
+</div>
+
+            </section>
