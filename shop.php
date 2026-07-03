@@ -39,7 +39,30 @@ $products = $stmt->fetchAll();
     <h2 class="mb-5 text-center">
         Shop
     </h2>
+<form method="GET" class="row mb-5">
 
+<div class="col-md-10">
+
+<input
+type="text"
+name="search"
+class="form-control"
+placeholder="Kërko produkte..."
+value="<?= htmlspecialchars($search) ?>">
+
+</div>
+
+<div class="col-md-2">
+
+<button class="btn btn-success w-100">
+
+Kërko
+
+</button>
+
+</div>
+
+</form>
     <div class="row">
 
 <?php foreach($products as $product){ ?>
