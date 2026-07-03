@@ -2,14 +2,34 @@
 require_once "includes/db.php";
 include "includes/header.php";
 
-$stmt = $pdo->query("
-SELECT products.*, categories.name AS category_name
-FROM products
-LEFT JOIN categories
-ON products.category_id = categories.id
-WHERE products.status = 1
-ORDER BY products.id DESC
-");
+$search = $_GET['search'] ?? '';
+
+if($search != ''){
+
+    $stmt = $pdo->prepare("
+    SELECT products.*, categories.name AS category_name
+    FROM products
+    LEFT JOIN categories
+    ON products.category_id = categories.id
+    WHERE products.status = 1
+    AND products.name LIKE ?
+    ORDER BY products.id DESC
+    ");
+
+    $stmt->execute(["%$search%"]);
+
+}else{
+
+    $stmt = $pdo->query("
+    SELECT products.*, categories.name AS category_name
+    FROM products
+    LEFT JOIN categories
+    ON products.category_id = categories.id
+    WHERE products.status = 1
+    ORDER BY products.id DESC
+    ");
+
+}
 
 $products = $stmt->fetchAll();
 ?>
