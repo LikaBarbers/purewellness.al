@@ -1,1 +1,63 @@
+body{
+    font-family:'Poppins',sans-serif;
+    background:#fafaf8;
+}
 
+.navbar{
+    padding:15px 0;
+}
+
+.hero{
+    min-height:85vh;
+    display:flex;
+    align-items:center;
+    background:linear-gradient(rgba(255,255,255,.75),rgba(255,255,255,.75)),
+    url('../images/hero.jpg');
+    background-size:cover;
+    background-position:center;
+}
+
+.hero h1{
+    font-size:60px;
+    color:#49613b;
+    font-weight:700;
+}
+
+.hero p{
+    font-size:20px;
+    color:#555;
+}
+
+.category-card{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+    transition:.3s;
+    font-size:45px;
+}
+
+.category-card:hover{
+    transform:translateY(-8px);
+}
+
+.category-card h4{
+    margin-top:20px;
+    font-size:22px;
+}
+
+.product-card{
+    border:none;
+    border-radius:20px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.product-card:hover{
+    transform:translateY(-8px);
+}
+
+.product-card img{
+    height:260px;
+    object-fit:cover;
+}
