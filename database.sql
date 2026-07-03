@@ -7,17 +7,41 @@ CREATE TABLE categories (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE products (
+CREATCREATE TABLE products (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    category_id INT,
+
+    category_id INT NOT NULL,
+
     name VARCHAR(255) NOT NULL,
+
+    brand VARCHAR(100),
+
+    sku VARCHAR(100),
+
+    short_description VARCHAR(255),
+
     description TEXT,
+
     price DECIMAL(10,2) NOT NULL,
-    image VARCHAR(255),
+
+    sale_price DECIMAL(10,2) DEFAULT NULL,
+
     stock INT DEFAULT 0,
+
+    image VARCHAR(255),
+
     featured TINYINT(1) DEFAULT 0,
+
+    status TINYINT(1) DEFAULT 1,
+
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (category_id) REFERENCES categories(id)
+
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    ON UPDATE CURRENT_TIMESTAMP,
+
+    FOREIGN KEY(category_id)
+    REFERENCES categories(id)
+
 );
 
 CREATE TABLE customers (
