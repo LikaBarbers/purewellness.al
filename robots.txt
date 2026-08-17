@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /cart.php
+Disallow: /checkout.php
+
+Sitemap: https://purewellness.al/sitemap.php

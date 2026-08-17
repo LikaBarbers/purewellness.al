@@ -1,9 +1,20 @@
+<?php
+$pageTitle = $pageTitle ?? 'Purewellness.al';
+$pageDescription = $pageDescription ?? 'Purewellness.al - produkte wellness dhe kujdesi personal.';
+$pageCanonical = $pageCanonical ?? null;
+$pageRobots = $pageRobots ?? 'index,follow';
+?>
 <!DOCTYPE html>
 <html lang="sq">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purewellness.al</title>
+    <title><?= htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); ?></title>
+    <meta name="description" content="<?= htmlspecialchars($pageDescription, ENT_QUOTES, 'UTF-8'); ?>">
+    <meta name="robots" content="<?= htmlspecialchars($pageRobots, ENT_QUOTES, 'UTF-8'); ?>">
+    <?php if ($pageCanonical): ?>
+    <link rel="canonical" href="<?= htmlspecialchars($pageCanonical, ENT_QUOTES, 'UTF-8'); ?>">
+    <?php endif; ?>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">

@@ -1,0 +1,43 @@
+PUREWELLNESS.AL - SEO FIX PACKAGE
+
+Ndryshimet kryesore:
+1. product.php
+   - Vetëm produkte aktive (status=1) hapen për indeksim.
+   - 404 + noindex për ID joekzistuese/joaktive.
+   - Title unik dhe meta description për çdo produkt.
+   - Canonical unik për çdo produkt.
+   - H1 për emrin e produktit.
+   - Product structured data (JSON-LD), me price, availability, sku, brand dhe image kur ekzistojnë.
+   - Alt text për imazhin.
+   - Lidhje kthimi te Shop.
+
+2. includes/header.php
+   - Mbështet title, description, robots dhe canonical dinamike.
+
+3. shop.php
+   - Title/description/canonical për faqen Shop.
+   - Fotoja dhe emri i çdo produkti janë link direkt drejt faqes së produktit.
+
+4. sitemap.php
+   - Sitemap XML dinamik.
+   - Përfshin vetëm produktet me status=1 plus faqet kryesore publike.
+   - Nuk përfshin cart, checkout ose admin.
+
+5. robots.txt
+   - Lejon crawl të site-it publik.
+   - Bllokon admin/cart/checkout.
+   - Deklaron sitemap.php.
+
+PARA UPLOAD-IT:
+- Bëj backup të faqes live dhe databazës.
+- Ky ZIP është bazuar te kodi që u ngarkua në bisedë. Serveri live mund të ketë skedarë/ndryshime shtesë.
+- Nëse ke tashmë sitemap.php ose robots.txt live me logjikë tjetër të rëndësishme, krahasoji para zëvendësimit.
+- DB credentials nuk janë ndryshuar.
+
+PAS UPLOAD-IT:
+- Hape https://purewellness.al/sitemap.php dhe verifiko që del XML pa error.
+- Testo 2-3 produkte dhe Shop-in.
+- Në Search Console ri-dërgo vetëm sitemap.php si sitemap.
+- Hiq hyrjet individuale product.php?id=... nga seksioni Sitemaps.
+- Përdor URL Inspection > Test Live URL për disa produkte.
+- Pastaj Request Indexing për disa produkte prioritare dhe lëre Google të recrawl sitemap-in.

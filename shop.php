@@ -1,5 +1,8 @@
 <?php
 require_once "includes/db.php";
+$pageTitle = 'Shop | Purewellness.al';
+$pageDescription = 'Shfleto produktet e Purewellness.al.';
+$pageCanonical = 'https://purewellness.al/shop.php';
 include "includes/header.php";
 
 $search = $_GET['search'] ?? '';
@@ -73,19 +76,22 @@ Kërko
 
 <?php if($product['image']){ ?>
 
+<a href="product.php?id=<?= (int)$product['id']; ?>">
 <img
 src="assets/uploads/<?= htmlspecialchars($product['image']); ?>"
+alt="<?= htmlspecialchars($product['name']); ?>"
 class="card-img-top"
 style="height:260px;object-fit:cover;">
+</a>
 
 <?php } ?>
 
 <div class="card-body">
 
 <h5>
-
+<a href="product.php?id=<?= (int)$product['id']; ?>" class="text-decoration-none text-dark">
 <?= htmlspecialchars($product['name']); ?>
-
+</a>
 </h5>
 
 <p class="text-success">
