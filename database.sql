@@ -7,7 +7,7 @@ CREATE TABLE categories (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATCREATE TABLE products (
+CREATE TABLE products (
     id INT AUTO_INCREMENT PRIMARY KEY,
 
     category_id INT NOT NULL,
