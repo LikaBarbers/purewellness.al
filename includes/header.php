@@ -12,6 +12,10 @@ $pageRobots = $pageRobots ?? 'index,follow';
     <title><?= htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); ?></title>
     <meta name="description" content="<?= htmlspecialchars($pageDescription, ENT_QUOTES, 'UTF-8'); ?>">
     <meta name="robots" content="<?= htmlspecialchars($pageRobots, ENT_QUOTES, 'UTF-8'); ?>">
+    <!-- Site icon / favicon -->
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="96x96">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/favicon.png">
     <?php if ($pageCanonical): ?>
     <link rel="canonical" href="<?= htmlspecialchars($pageCanonical, ENT_QUOTES, 'UTF-8'); ?>">
     <?php endif; ?>
