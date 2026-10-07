@@ -3,9 +3,9 @@ require_once "includes/db.php";
 $pageTitle = 'Shop | Purewellness.al';
 $pageDescription = 'Shfleto produktet e Purewellness.al.';
 $pageCanonical = 'https://purewellness.al/shop.php';
+$search = trim((string)($_GET['search'] ?? ''));
+$pageRobots = $search !== '' ? 'noindex,follow' : 'index,follow';
 include "includes/header.php";
-
-$search = $_GET['search'] ?? '';
 
 if($search != ''){
 

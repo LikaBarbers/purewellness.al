@@ -35,6 +35,7 @@ if ($plainDescription === '') {
 $pageDescription = mb_substr($plainDescription, 0, 155, 'UTF-8');
 $pageTitle = $productName . ' | Purewellness.al';
 $pageCanonical = 'https://purewellness.al/product.php?id=' . (int)$product['id'];
+$pageRobots = 'index,follow';
 
 $effectivePrice = ($product['sale_price'] !== null && (float)$product['sale_price'] > 0)
     ? (float)$product['sale_price']

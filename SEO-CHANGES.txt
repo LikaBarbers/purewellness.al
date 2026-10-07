@@ -1,43 +1,44 @@
-PUREWELLNESS.AL - SEO FIX PACKAGE
+PUREWELLNESS.AL - SEO FIX PACKAGE (GITHUB CURRENT CODE)
 
-Ndryshimet kryesore:
+Rregullimet:
 1. product.php
    - Vetëm produkte aktive (status=1) hapen për indeksim.
-   - 404 + noindex për ID joekzistuese/joaktive.
-   - Title unik dhe meta description për çdo produkt.
-   - Canonical unik për çdo produkt.
-   - H1 për emrin e produktit.
-   - Product structured data (JSON-LD), me price, availability, sku, brand dhe image kur ekzistojnë.
-   - Alt text për imazhin.
-   - Lidhje kthimi te Shop.
+   - URL-të e pavlefshme/joaktive kthejnë HTTP 404 + noindex.
+   - Çdo produkt ka title, meta description dhe canonical self-referencing.
+   - Product JSON-LD me price, availability, sku/ID, brand dhe image kur ekzistojnë.
+   - H1 dhe alt text për produktin.
 
 2. includes/header.php
-   - Mbështet title, description, robots dhe canonical dinamike.
+   - Menaxhon title, description, robots dhe canonical dinamike.
 
 3. shop.php
-   - Title/description/canonical për faqen Shop.
-   - Fotoja dhe emri i çdo produkti janë link direkt drejt faqes së produktit.
+   - Shop normal: index,follow + canonical te shop.php.
+   - URL-të me ?search=...: noindex,follow që të mos krijojnë shumë variante indeksimi.
+   - Linkim i drejtpërdrejtë Home/Shop -> produktet.
 
-4. sitemap.php
-   - Sitemap XML dinamik.
-   - Përfshin vetëm produktet me status=1 plus faqet kryesore publike.
-   - Nuk përfshin cart, checkout ose admin.
+4. index.php
+   - U rregullua HTML/PHP i cunguar që ishte në GitHub.
+   - U shtuan 8 produkte të indeksueshme si linke direkte nga Home.
+   - U shtuan title, description dhe canonical.
 
-5. robots.txt
-   - Lejon crawl të site-it publik.
-   - Bllokon admin/cart/checkout.
+5. about.php / contact.php
+   - Title, description dhe canonical unike.
+
+6. cart.php / checkout.php
+   - noindex,follow; nuk janë faqe SEO.
+   - robots.txt nuk i bllokon, në mënyrë që Google të mund të shohë noindex.
+
+7. sitemap.php
+   - Përfshin vetëm faqet publike kryesore dhe produktet me status=1.
+   - Nuk përfshin cart, checkout, admin ose search URLs.
+
+8. robots.txt
+   - Bllokon vetëm /admin/.
    - Deklaron sitemap.php.
 
-PARA UPLOAD-IT:
-- Bëj backup të faqes live dhe databazës.
-- Ky ZIP është bazuar te kodi që u ngarkua në bisedë. Serveri live mund të ketë skedarë/ndryshime shtesë.
-- Nëse ke tashmë sitemap.php ose robots.txt live me logjikë tjetër të rëndësishme, krahasoji para zëvendësimit.
-- DB credentials nuk janë ndryshuar.
-
-PAS UPLOAD-IT:
-- Hape https://purewellness.al/sitemap.php dhe verifiko që del XML pa error.
-- Testo 2-3 produkte dhe Shop-in.
-- Në Search Console ri-dërgo vetëm sitemap.php si sitemap.
-- Hiq hyrjet individuale product.php?id=... nga seksioni Sitemaps.
-- Përdor URL Inspection > Test Live URL për disa produkte.
-- Pastaj Request Indexing për disa produkte prioritare dhe lëre Google të recrawl sitemap-in.
+PAS DEPLOY:
+- Kontrollo https://purewellness.al/sitemap.php dhe sigurohu që kthen XML.
+- Testo product.php?id=162 në URL Inspection.
+- Te URL Inspection kontrollo User-declared canonical dhe Google-selected canonical.
+- Në Search Console mbaj vetëm sitemap.php si sitemap.
+- Mos bëj Remove all URLs dhe mos kërko indeksim për të 87 URL-të njëherësh.

@@ -2,6 +2,9 @@
 session_start();
 
 require_once "includes/db.php";
+$pageTitle = 'Checkout | Purewellness.al';
+$pageDescription = 'Përfundimi i porosisë në Purewellness.al.';
+$pageRobots = 'noindex,follow';
 include "includes/header.php";
 
 if (!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0) {

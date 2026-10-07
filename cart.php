@@ -1,6 +1,9 @@
 <?php
 session_start();
 require_once "includes/db.php";
+$pageTitle = 'Shporta | Purewellness.al';
+$pageDescription = 'Shporta e blerjeve në Purewellness.al.';
+$pageRobots = 'noindex,follow';
 include "includes/header.php";
 
 if (!isset($_SESSION['cart'])) {

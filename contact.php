@@ -1,4 +1,9 @@
-<?php include "includes/header.php"; ?>
+<?php
+$pageTitle = 'Kontakt | Purewellness.al';
+$pageDescription = 'Kontaktoni Purewellness.al për pyetje rreth produkteve dhe porosive.';
+$pageCanonical = 'https://purewellness.al/contact.php';
+include "includes/header.php";
+?>
 
 <div class="container py-5">
 

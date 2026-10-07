@@ -1,5 +1,10 @@
 
-<?php include "includes/header.php"; ?>
+<?php
+$pageTitle = 'Rreth nesh | Purewellness.al';
+$pageDescription = 'Mësoni më shumë rreth Purewellness.al dhe misionit tonë për wellness, skincare, body care dhe hair care.';
+$pageCanonical = 'https://purewellness.al/about.php';
+include "includes/header.php";
+?>
 
 <div class="container py-5">
 
