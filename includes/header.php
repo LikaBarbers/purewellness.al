@@ -1,6 +1,6 @@
 <?php
 $pageTitle = $pageTitle ?? 'Purewellness.al';
-$pageDescription = $pageDescription ?? 'Purewellness.al - produkte wellness dhe kujdesi personal.';
+$pageDescription = $pageDescription ?? 'Purewellness.al - produkte wellness, skincare, body care dhe hair care.';
 $pageCanonical = $pageCanonical ?? null;
 $pageRobots = $pageRobots ?? 'index,follow';
 ?>
