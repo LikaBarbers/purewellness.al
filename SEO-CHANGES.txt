@@ -42,3 +42,4 @@ PAS DEPLOY:
 - Te URL Inspection kontrollo User-declared canonical dhe Google-selected canonical.
 - Në Search Console mbaj vetëm sitemap.php si sitemap.
 - Mos bëj Remove all URLs dhe mos kërko indeksim për të 87 URL-të njëherësh.
+- Added root favicon.png (96x96) and favicon.ico, and linked them from includes/header.php for Google/site icon discovery.
